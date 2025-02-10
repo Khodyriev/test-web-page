@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      id="rwc-embed-script"
+      async
+      src="https://chat.mcgrawhill-staging.onereach.ai/lib/richWebChat.umd.min.js"
+    ></script>
+    <script src="https://files.mcgrawhill-staging.api.onereach.ai/public/ed5398e8-cee9-40de-acd2-b41149f00632/RWC-MGH-SETTINGS/connectED_rwc6_autoOpener.js"></script>
+    <link rel="stylesheet" href="https://chat.mcgrawhill-staging.onereach.ai/lib/richWebChat.css"/>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .message-test {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+    </style>
+    <title>ConnectED-RWC5-STAGING</title>
+  </head>
+  <body>
+    <!-- In <head> add scripts and styles to your html page -->
+      <div class="message-test">
+        <h1>This is a test web page!</h1>
+        <h3 style="color: red;">Bot: <i>ConnectED / Open Learning</i> _ <b>RWC6</b></h3>
+        <h3>Env: <i>External web page</i></h3>
+        <h4><a href="https://em.mcgrawhill-staging.api.onereach.ai/http/ed5398e8-cee9-40de-acd2-b41149f00632/test-stgnig-connect-ed-rwc5-page">Main test page with this bot (mcgrawhill-staging)</a></h4>
+      </div>
+    <div id="rwc"></div>
+    <script>
+      const scriptEl = document.getElementById('rwc-embed-script');
+    
+      scriptEl.addEventListener('load', initEmbedChat);
+      initEmbedChat();
+    
+      function initEmbedChat() {
+        var richWebChat = window.richWebChat;
+        if (window.isRwcEmbedLoaded || !richWebChat) {
+          return;
+        }
+        
+        window.isRwcEmbedLoaded = true;
+    
+        var RWC = richWebChat.default;
+        var app = new RWC({
+          container: '#rwc', // DOM element selector where chat will be inserted
+          chatUrl: 'https://chat.mcgrawhill-staging.onereach.ai/7VOY6M7pQN6s0rQRSfAGMg/0p1056e?loader=light&continueSession=true', // url of your chat. required
+          
+          appearance: {
+            blurredBackground: false,
+            resizeable: false,
+            draggable: true,
+            saveChatSize: true,
+            preloadInBackground: false
+          },
+          
+          widget: {
+            position: 'bottom-right',
+            animation: 'pulse', // 'pulse', 'ring', 'zoom',
+            color: '#D32F2F',
+            logoUrl: '',
+            revealDelay: 0,
+            openDelay: 0,
+          },
+          
+          invitation: {
+            closeable: true,
+            imageUrl: '',
+            message: '',
+            buttonLabel: '',
+            appearDelay: 5000,
+            soundLocation: '',
+          },
+          
+          pageData: {
+            fname: 'foo'
+          }
+        })
+      };
+    </script>
+  </body>
+</html>
