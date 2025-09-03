@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
-      id="rwc-embed-script"
-      async
-      src="https://chat.mcgrawhill-west.onereach.ai/lib/richWebChat.umd.min.js"
-    ></script>
-    <script src="https://files.mcgrawhill-west.api.onereach.ai/public/c21601e3-8bab-4ec7-a323-83e2c64fdb78/rwc__settings-custom/connectED_rwc6_autoOpener.js"></script>
-    <link rel="stylesheet" href="https://chat.mcgrawhill-west.onereach.ai/lib/richWebChat.css"/>
+    id="rwc-embed-script"
+    async
+    src="https://chat.mcgrawhill-staging.onereach.ai/lib/richWebChat.umd.min.js"
+  ></script>
+    <script src="https://files.mcgrawhill-staging.api.onereach.ai/public/ed5398e8-cee9-40de-acd2-b41149f00632/RWC-MGH-SETTINGS/cont_conv_rwc5_conIntegrAutom.js"></script>
+  <script src="https://files.mcgrawhill-staging.api.onereach.ai/public/ed5398e8-cee9-40de-acd2-b41149f00632/RWC-MGH-SETTINGS/connect-instructor-platform-customization/focusFeature.js" async></script>
+  
+  <script src="https://files.mcgrawhill-staging.api.onereach.ai/public/ed5398e8-cee9-40de-acd2-b41149f00632/RWC-MGH-SETTINGS/connect-instructor-platform-customization/minButtonCustom.js"></script>
+    <link rel="stylesheet" href="https://chat.mcgrawhill-staging.onereach.ai/lib/richWebChat.css"/>
+    <link rel="stylesheet" href="https://files.mcgrawhill-staging.api.onereach.ai/public/ed5398e8-cee9-40de-acd2-b41149f00632/RWC-MGH-SETTINGS/connect-instructor-platform-customization/customORstyles.css">
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -29,68 +33,101 @@
         text-align: center;
       }
     </style>
-    <title>ConnectED-RWC5-STAGING</title>
+    <title>Connect: Instructor-STAGING</title>
   </head>
   <body>
     <!-- In <head> add scripts and styles to your html page -->
       <div class="message-test">
         <h1>This is a test web page!</h1>
-        <h2 style="color: SlateBlue;">WEST (main Prod)</h2>
-        <h3 style="color: red;">Bot: <i>ConnectED / Open Learning</i> _ <b>RWC6</b></h3>
-        <h3>Env: <i>External web page</i></h3>
+        <h2 style="color: SlateBlue;">STAGING</h2>
+        <h3 style="color: red;">Bot: <i>Connect Platform: Instructor Support</i> _ <b>RWC6</b></h3>
+        <h3>Env: <i>MGH - STAGING - External web page</i></h3>
         <h4><a href="https://khodirevgennadiy.neocities.org/">Main test page with this bot (neocities)</a></h4>
       </div>
     <div id="rwc"></div>
     <script>
-      const scriptEl = document.getElementById('rwc-embed-script');
+  const scriptEl = document.getElementById('rwc-embed-script');
+
+  scriptEl.addEventListener('load', initEmbedChat);
+  initEmbedChat();
+
+  function initEmbedChat() {
+    if (window.isRwcEmbedLoaded || !richWebChat) {
+      return;
+    }
     
-      scriptEl.addEventListener('load', initEmbedChat);
-      initEmbedChat();
+    window.isRwcEmbedLoaded = true;
     
-      function initEmbedChat() {
-        var richWebChat = window.richWebChat;
-        if (window.isRwcEmbedLoaded || !richWebChat) {
-          return;
-        }
-        
-        window.isRwcEmbedLoaded = true;
-    
-        var RWC = richWebChat.default;
-        var app = new RWC({
-          container: '#rwc', // DOM element selector where chat will be inserted
-          chatUrl: 'https://chat.mcgrawhill-west.onereach.ai/whYB44urTsejI4Pixk_beA/0p1056e?loader=light&continueSession=true', // url of your chat. required
-          
-          appearance: {
-            blurredBackground: false,
-            resizeable: false,
-            draggable: true,
-            saveChatSize: true,
-            preloadInBackground: false
-          },
-          
-          widget: {
-            position: 'bottom-right',
-            animation: 'pulse', // 'pulse', 'ring', 'zoom',
-            color: '#D32F2F',
-            logoUrl: '',
-            revealDelay: 0,
-            openDelay: 0,
-          },
-          
-          invitation: {
-            closeable: true,
-            imageUrl: '',
-            message: '',
-            buttonLabel: '',
-            appearDelay: 5000,
-            soundLocation: '',
-          },
-          
-          pageData: {
-            fname: 'foo'
+    var RWC = richWebChat.default;
+    var app = new RWC({
+      container: '#rwc', // DOM element selector where chat will be inserted
+      chatUrl: 'https://chat.mcgrawhill-staging.onereach.ai/7VOY6M7pQN6s0rQRSfAGMg/0ybu554?loader=light&continueSession=true', // url of your chat. required
+      // chatUrl: 'https://chat.mcgrawhill-staging.onereach.ai/7VOY6M7pQN6s0rQRSfAGMg/0ybu554?loader=light',
+      appearance: {
+        blurredBackground: false,
+        resizeable: false,
+        draggable: true,
+        saveChatSize: true,
+        preloadInBackground: false
+      },
+      
+      widget: {
+        position: 'bottom-right',
+        animation: 'none', // 'pulse', 'ring', 'zoom',
+        color: '#409fec',
+        logoUrl: '',
+        revealDelay: 0,
+        openDelay: 0,
+      },
+      
+      invitation: {
+        closeable: false,
+        imageUrl: '',
+        message: '',
+        buttonLabel: '',
+        appearDelay: 5000,
+        soundLocation: '',
+      },
+
+      pageData: {
+        "contactEmail": "dfletcher13@ccc.edu",
+        "instructorUserName": "dfletcher13@ccc.edu",
+        "instructorUserId": "41936324",
+        "instructorFirstName": "Dectric",
+        "instructorLastName": "Fletcher",
+        "instructorPersonXid": "urn:com.mheducation.openlearning:enterprise.identity:prod.us-east-1:person:993607cf-791f-4e06-910c-33c98fc6db95",
+        "orgDetails": [
+          {
+            "id": "53bb2923-4afa-4ae2-bd2b-af032b347bb6",
+            "xid": "urn:com.mheducation.openlearning:enterprise.identity.organization:prod.global:organization:53bb2923-4afa-4ae2-bd2b-af032b347bb6",
+            "name": "CITY COLLEGE OF CHICAGO",
+            "state": "IL",
+            "country": "US"
           }
-        })
-      };
-    </script>
+        ],
+        "courseName": "Fall 2024 STHLTH 174 DH2 ECG",
+        "courseId": "150413026",
+        "sectionName": "Fall 2024 STHLTH 174 DH2 ECG",
+        "sectionId": "150413027",
+        "lmsType": {
+          "installationId": "02ece8f5c2a6418aa1b9e08d5e330d1f",
+          "lmsDisplayName": "BrightSpace",
+          "lmsIntegrationType": "DI",
+          "switchToLMSText": "CCC Brightspace"
+        },
+        "mheProduct": "1260203840",
+        "loginUrl": "https://connect.edu.mheducation.com/instructor/course/150413026/section/150413027/assignments",
+        "sectionUrl": "https://connect.mheducation.com/class/d-fletcher-fall-2024-sthlth-174-dh2-ecg",
+        "disciplineId": "55066641",
+        "disciplineName": "Allied Health - Medical Assisting",
+        "sectionXid": "urn:com.mheducation.openlearning:enterprise.roster:prod.us-east-1:section:7db53c70-98a5-11ef-9e41-8dc4ef3ddcf7",
+        "learningSolutions": "No",
+        "category": "Platform"
+      }
+
+    })
+
+  };
+</script>
   </body>
 </html>
